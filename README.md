@@ -1,6 +1,5 @@
 # LogHelper
 
-# using it like this
 # init handle
 	CLogHelper::read_config_init("loginit-demo.conf");
 # print log msg
