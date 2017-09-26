@@ -1,5 +1,6 @@
 # LogHelper
-
+	you need the liblog4cpp,the log4cpp download address:
+	http://log4cpp.sourceforge.net/
 # init handle
 	CLogHelper::read_config_init("loginit-demo.conf");
 # print log msg
