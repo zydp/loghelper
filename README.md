@@ -2,10 +2,12 @@
 	you need the liblog4cpp,the log4cpp download address:
 	http://log4cpp.sourceforge.net/
 # init handle
-	CLogHelper::read_config_init("loginit-demo.conf");
+	#define LOGFORMAT "loginit-demo.conf"
+	CLogHelper::FormatInit(LOGFORMAT)；
 # print log msg
-	PROCESS_LOG("test",LERROR,"Test Error Message!");
-	PROCESS_LOG("test",LWARN,"Test Warning Message!");
-	PROCESS_LOG("test",LNOTICE,"Test Notice Message!");
-	PROCESS_LOG("test",LINFO,"Test Info Message!");
-	PROCESS_LOG("test",LDEBUG,"Test Debug Message!");
+	#define AMODULE "ModuleA"
+	LOGRS(AMODULE, LOGLV::LERROR, "Test Error Message!");
+	LOGRS(AMODULE, LOGLV::LWARN, "Test Warning Message!");
+	LOGRS(AMODULE, LOGLV::LNOTICE, "Test Notice Message!");
+	LOGRS(AMODULE, LOGLV::LINFO, "Test Info Message!");
+	LOGRS(AMODULE, LOGLV::LDEBUG, "Test Debug Message! %s, %d, %f", "123", 456, 78.9);
