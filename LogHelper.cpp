@@ -67,9 +67,9 @@ void CLogHelper::record_log_with_args(const std::string& file, const int& line, 
 	va_list argvs;
 	va_start(argvs,format);
 #ifdef WIN32 
-	vsnprintf_s(logMsg,format.c_str(),argvs);
+	vsnprintf_s(logMsg,LOG_BUF_SIZE,format.c_str(),argvs);
 #else
-	vsnprintf(logMsg,format.c_str(),argvs);
+	vsnprintf(logMsg,LOG_BUF_SIZE,format.c_str(),argvs);
 #endif
 	va_end(argvs);
 	oss << logMsg;
